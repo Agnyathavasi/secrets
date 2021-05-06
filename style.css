@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+    position: relative;
+    background-color: lightgrey;
+}
+
+.box {
+    position: absolute;
+    top: 25%;
+    bottom: 25%;
+    left: 10%;
+    right: 10%;
+}
+
+svg {
+    transform: rotate(135deg);
+}
+
+
+h1 {
+    padding-top: 0.5em;
+    font-size: 4em;
+    font-weight: 400;
+}
+
+p {
+    padding-bottom: 0.9em;
+    border-bottom: 1px solid #999;
+}
+
+button {
+    margin: 0.1em;
+}

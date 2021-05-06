@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="registeruser.css">
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="userAccount">My Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div class="box">
+    <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+      <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+    </svg>
+  </div>
+
+    <h1>Welcome to Secrets, <%= retrievedUser.fname %> </h1>
+    <h3>Share Your Secrets here anonymously.</h3>
+
+    <div class="container">
+
+        <div class="row" id="row1">
+          <form method="POST" action="/secretsubmit" name="myForm">
+            <div class="col-11">
+                <input class="form-control" id="secretinput" name="secretofuser" type="text"
+                placeholder="Your Secret Here" aria-label="default input example" maxlength="100"
+                onkeyup="updateCount(this)" onkeydown="updateCount(this)" spellcheck="false" required>
+            </div>
+            <div class="col-1">
+                <button type="submit" class="btn btn-dark"">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                  </svg>
+                </button>
+            </div>
+          </form>
+          <p id="count">0/100</p>
+        </div>
+        <h2>Discover what others have shared</h1>
+        <div class="row" id="secretsdisplay">
+        <% for (var i =0; i < retrivedSecrets.length ;  i++ ) { %>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <p><%=  retrivedSecrets[i].secret %></p>
+            </div>
+        <% } %>
+        </div>
+    </div>
+  
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+      <script>
+
+        function updateCount(self) {
+          var cs = self.value.length;
+          document.getElementById('count').innerHTML = cs + "/100"
+        }
+      </script>
+  </body>
+</html>

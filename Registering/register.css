@@ -1,0 +1,44 @@
+body {
+    background-color: lightgray;
+    
+}
+
+h2 {
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    font-size: 3em;
+    font-weight: 400;
+}
+
+.box {
+    background-color: white;
+    padding: 1.5em;
+    margin-left: 10%;
+    margin-right: 40%;
+    border-radius: 5px;
+    box-shadow: 1px 0.5em 0.5em black;
+}
+
+button {
+    margin-top: 0.5em;
+}
+
+.checkbox {
+    margin: 10px 5px 0 10px;
+}
+
+.birthDay {
+    padding: 0.2em 2em 0.3em 0.5em;
+    margin-left: 1em;
+    color: #999;
+    margin-bottom: 0.5em;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.birthDay::selection {
+    color: #999;
+    border: 1px solid #aaa;
+}
+
