@@ -22,7 +22,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect('mongodb+srv://admin-lordisva:vishabhi123@cluster0.eozfk.mongodb.net/userDB',{useNewUrlParser:true, useUnifiedTopology: true});
+mongoose.connect('MongoDB url from mongoshell',{useNewUrlParser:true, useUnifiedTopology: true});
 mongoose.set('useFindAndModify', false);
 mongoose.connection.once('open',function(){
 console.log("Connection has been made");
